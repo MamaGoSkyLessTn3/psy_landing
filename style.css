@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #28C0C1;
+  --wave-color: #3ECBCC;
+  --gray-wave: #D9D9D9;
+}
+
+@theme {
+  --font-alice: "Alice", serif;
+  --color-accent: var(--accent);
+  --color-wave: var(--wave-color);
+}
+
+/* Глобальные настройки */
+body {
+  font-family: "Alice", serif;
+  @apply bg-[#f8fafc] text-slate-800 antialiased scroll-smooth;
+}
+
+/* --- СКРОЛЛБАР --- */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 20px;
+  border: 3px solid #f1f5f9;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1e9697;
+}
+
+/* --- АНИМАЦИИ ЗАГРУЗКИ (HERO) --- */
+
+/*
+   КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ:
+   visibility: hidden предотвращает мерцание (Flash of Unstyled Content).
+*/
+.animate-fade-up,
+.animate-wave {
+  opacity: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-wave {
+  animation: waveIn 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes waveIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 0.5;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+/* Задержки проявления */
+.delay-100 { animation-delay: 0.4s; }
+.delay-200 { animation-delay: 0.9s; }
+.delay-300 { animation-delay: 1.4s; }
+.delay-500 { animation-delay: 2.0s; }
+
+/* --- ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ --- */
+.side-wave-container {
+  @apply absolute bottom-0 right-0 pointer-events-none z-0;
+  width: auto;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.side-wave-img {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(0%) saturate(0%) brightness(75%);
+  opacity: 0.3;
+  @apply block h-full w-auto object-contain;
+  object-position: right bottom;
+}
+
+/* --- ГЛАВНЫЙ БЛОК (HERO) --- */
+.hero-bg {
+  background-color: var(--accent) !important;
+}
+
+.hero-content {
+  @apply !px-8 md:!pl-32 py-12;
+}
+
+.wave-container {
+  @apply absolute bottom-0 left-0 pointer-events-none z-10 flex items-end overflow-hidden w-full;
+}
+
+.wave-img {
+  @apply w-full h-auto object-cover;
+  transform: translateY(5%) scale(1.05);
+  transform-origin: bottom left;
+}
+
+/* --- ПОДЛОЖКА "ОБО МНЕ" --- */
+.wave-overlay {
+  @apply absolute right-0 bottom-0 w-full pointer-events-none z-10 overflow-hidden;
+  height: 80%;
+  transform: scaleX(-1);
+}
+
+.wave-overlay::after {
+  content: "";
+  @apply absolute bottom-0 right-0 h-full;
+  width: 130%;
+  background-image: url('wave.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  filter: brightness(0) saturate(100%) invert(95%) sepia(0%) saturate(0%) brightness(85%);
+}
+
+/* --- ЭФФЕКТЫ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ (REVEAL) --- */
+.reveal {
+  @apply opacity-0 transition-all duration-1000 ease-out;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  @apply opacity-100;
+  transform: translateY(0);
+}
+
+/* --- КАРТОЧКИ --- */
+.stat-card-horizontal {
+  background-color: var(--accent) !important;
+  @apply p-6 text-white flex flex-col items-center justify-center min-h-[140px] w-full transition-all duration-300 rounded-sm;
+}
+
+.stat-card-horizontal:hover {
+  @apply scale-105 shadow-xl;
+}
+
+.stat-card-horizontal img {
+  @apply w-12 h-12 mb-3 filter brightness-0 invert opacity-100 object-contain;
+}
+
+.stat-card-horizontal .stat-value {
+  @apply text-5xl font-bold leading-none mb-2;
+}
+
+.animate-gift-bounce {
+  animation: gift-jump 3s ease-in-out infinite;
+}
+
+@keyframes gift-jump {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+/* --- МЕТОДЫ РАБОТЫ --- */
+.method-card {
+  @apply p-8 rounded-3xl min-h-[400px] flex flex-col justify-between transition-all duration-500 cursor-default shadow-sm border;
+}
+
+.method-icon {
+  @apply w-20 h-20 transition-all duration-500;
+  background-color: currentColor;
+  -webkit-mask-image: url('sea_marker.svg');
+  mask-image: url('sea_marker.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.method-card:not(.method-card--inverted) {
+  @apply bg-white border-[#28C0C1] text-[#28C0C1];
+}
+
+.method-card:not(.method-card--inverted):hover {
+  background-color: var(--accent) !important;
+  @apply text-white shadow-2xl -translate-y-2 border-transparent;
+}
+
+.method-card--inverted {
+  background-color: var(--accent) !important;
+  @apply text-white border-transparent;
+}
+
+.method-card--inverted:hover {
+  background-color: white !important;
+  @apply text-[#28C0C1] shadow-2xl -translate-y-2 border-[#28C0C1]/20;
+}
+
+/* --- СЕКЦИЯ ПУТИ --- */
+.path-step {
+  @apply flex flex-col items-center text-center w-full;
+}
+
+.path-icon {
+  @apply w-24 h-24 mb-6 transition-transform duration-300;
+  background-color: var(--accent);
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.path-step:hover .path-icon {
+  transform: scale(1.1);
+}
+
+/* СТРЕЛКИ */
+.path-arrow {
+  @apply w-12 h-8 opacity-0;
+  background-color: var(--accent);
+  -webkit-mask-image: var(--arrow-url);
+  mask-image: var(--arrow-url);
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.reveal.active .path-arrow {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 0.5; transform: translateX(0); }
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 768px) {
+  .wave-overlay { height: 45%; }
+  .side-wave-container { height: 30%; }
+  .path-step { @apply mb-16; }
+  .reveal.active .path-arrow { animation: none; }
+}

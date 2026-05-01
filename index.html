@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Белова Юлия — Психолог-консультант</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-alice">
+
+<main>
+  <!-- ПОДАРОК (Фиксированный) -->
+  <div id="gift-fixed" class="fixed bottom-10 right-10 flex items-center group cursor-pointer z-50">
+    <span class="mr-4 bg-white text-[#28C0C1] px-6 py-3 rounded-full shadow-2xl opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+      Практики в подарок
+    </span>
+    <div class="w-16 h-16 bg-[#28C0C1] text-white rounded-full flex items-center justify-center shadow-2xl animate-gift-bounce">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12V22H4V12M20 12H22V7H2V12H4M20 12H4M12 22V7M12 7C12 7 9.5 3 6.5 3C3.5 3 3.5 7 6.5 7H12ZM12 7C12 7 14.5 3 17.5 3C20.5 3 20.5 7 17.5 7H12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- HERO БЛОК (Исправленный отступ) -->
+  <!-- Изменили min-h-screen на min-h-0 md:min-h-screen -->
+  <section class="relative min-h-0 md:min-h-screen flex flex-col md:flex-row overflow-hidden bg-white">
+
+    <!-- Левая часть с контентом -->
+    <!-- Добавили flex-grow, чтобы на мобильных блок растягивался, если контента мало -->
+    <div class="w-full md:w-1/2 hero-bg flex flex-col justify-center relative overflow-hidden hero-content flex-grow">
+
+      <!-- Бирюзовая волна -->
+      <div class="wave-container animate-wave will-change-transform">
+        <img src="wave.svg" alt="" class="wave-img">
+      </div>
+
+      <div class="relative z-30 space-y-6 text-white p-8 md:p-20">
+        <p class="text-xl md:text-2xl opacity-90 animate-fade-up delay-100 will-change-transform">
+          Психолог-консультант
+        </p>
+
+        <h1 class="text-6xl md:text-[100px] leading-[0.9] pb-4 animate-fade-up delay-200 font-alice will-change-transform">
+          Белова Юлия
+        </h1>
+
+        <p class="text-lg md:text-2xl max-w-md opacity-90 leading-relaxed animate-fade-up delay-300 will-change-transform">
+          Ваш проводник к внутреннему спокойствию и уверенности
+        </p>
+
+        <div class="flex flex-wrap items-center gap-6 pt-6 animate-fade-up delay-500 will-change-transform">
+          <a href="#consultation"
+             class="px-10 py-5 bg-white text-[#28C0C1] rounded-sm text-2xl shadow-xl transition-all duration-250 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/50"
+             aria-label="Записаться на консультацию">
+            Записаться на консультацию
+          </a>
+
+          <a href="https://t.me/Soul_Y_Belova_Lova"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-[#28C0C1] hover:scale-110 duration-200 transition-transform shadow-lg"
+             aria-label="Связаться в Telegram">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 2L2 10.5L9.5 13.5L11.5 19L15 15.5L19.5 19L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 13.5L22 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фотография: скрыта на мобильных, видна на ПК -->
+    <div class="hidden md:block w-1/2 h-auto relative animate-fade-up delay-300 overflow-hidden">
+      <img src="/background_1.png"
+           alt="Психолог Белова Юлия"
+           class="w-full h-full object-cover transform transition-transform duration-700">
+    </div>
+  </section>
+
+
+
+
+  <!-- БЛОК ОБО МНЕ -->
+  <section class="relative min-h-screen flex flex-col md:flex-row overflow-hidden bg-[#f3f3f3] reveal">
+
+    <!-- Заголовок: первым на мобильных (order-1), стандартно на ПК -->
+    <div class="w-full md:hidden pt-12 px-8 relative z-30 order-1">
+      <h2 class="text-6xl text-slate-900 leading-none">Обо мне</h2>
+    </div>
+
+    <!-- Левая часть: Фото (вторым на мобильных, order-2) -->
+    <div class="w-full md:w-1/2 flex items-center justify-center py-8 md:py-12 px-8 relative z-20 order-2 md:order-none">
+      <div class="max-w-md w-full">
+        <img src="/about_me.png" alt="Белова Юлия" class="w-full h-auto shadow-2xl grayscale-[15%] hover:grayscale-0 transition-all duration-700">
+      </div>
+    </div>
+
+    <!-- Правая часть: Контент (третьим на мобильных, order-3) -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center relative py-8 md:py-12 px-8 md:pr-32 order-3 md:order-none">
+      <!-- Серая подложка-волна -->
+      <div class="wave-overlay"></div>
+
+      <div class="relative z-20 space-y-8">
+        <!-- Скрываем этот заголовок на мобильных, так как он вынесен выше -->
+        <h2 class="hidden md:block text-6xl md:text-8xl text-slate-900 leading-none">Обо мне</h2>
+
+        <div class="space-y-6 text-lg md:text-xl text-slate-700 leading-relaxed max-w-2xl">
+          <p>
+            Здравствуйте! Я — Юлия, практический психолог, психолог-аддиктолог (работа с зависимостями), дипломированный специалист по методу PSY 2.0 с медицинским образованием.
+          </p>
+          <p>
+            В работе ценю честность и желание идти в глубину: пустую мотивацию не даю, только бережно и в рамках вашего запроса, расширяя видение.
+          </p>
+        </div>
+
+        <!-- Блоки достижений -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 max-w-4xl mx-auto">
+          <div class="stat-card-horizontal">
+            <span class="stat-value">30</span>
+            <span class="stat-text">Довольных клиентов</span>
+          </div>
+
+          <div class="stat-card-horizontal">
+            <img src="pig.svg" alt="Копилка">
+            <span class="stat-text">Самая выгодная цена</span>
+          </div>
+
+          <div class="stat-card-horizontal">
+            <span class="stat-value">8</span>
+            <span class="stat-text text-center">Смежных квалификаций</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- СЕКЦИЯ: С ЧЕМ Я ПОМОГУ СПРАВИТЬСЯ -->
+  <section class="relative min-h-0 md:min-h-screen flex flex-col md:flex-row-reverse overflow-hidden hero-bg reveal">
+
+    <!-- Мобильный заголовок: виден только на смартфонах, идет первым (order-1) -->
+    <div class="w-full md:hidden pt-12 px-8 relative z-30 order-1 text-white">
+      <h2 class="text-5xl leading-tight">С чем я помогу <br> справиться?</h2>
+    </div>
+
+    <!-- Правая часть: Фото (вторым на мобильных, order-2) -->
+    <div class="w-full md:w-1/2 flex items-center justify-center py-8 md:py-12 px-8 relative z-20 order-2 md:order-none">
+      <div class="max-w-md w-full">
+        <img src="/pic_what.png" alt="Юлия Белова" class="w-full h-auto shadow-2xl">
+      </div>
+    </div>
+
+    <!-- Левая часть: Контент (третьим на мобильных, order-3) -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center relative py-8 md:py-12 px-8 md:pl-32 text-white order-3 md:order-none">
+      <!-- Волна для декора -->
+      <div class="wave-container opacity-20">
+        <img src="wave.svg" alt="" class="wave-img">
+      </div>
+
+      <div class="relative z-20 space-y-10">
+        <!-- Десктопный заголовок: скрыт на мобильных, виден на ПК -->
+        <h2 class="hidden md:block text-5xl md:text-7xl leading-tight">С чем я помогу <br> справиться?</h2>
+
+        <p class="text-xl md:text-2xl opacity-90 max-w-xl">
+          Карьера и реализация, деньги, поиск себя, состояние и уровень энергии, отношения с партнером, вопросы здоровья и психосоматики
+        </p>
+
+        <!-- Список с иконками -->
+        <div class="space-y-8 max-w-2xl">
+          <!-- Пункт 1: Тело -->
+          <div class="flex items-start group">
+            <img src="sea_marker.svg" alt="" class="w-12 h-12 mr-6 transition-transform group-hover:scale-110">
+            <div>
+              <h3 class="text-2xl font-bold mb-2">Тело:</h3>
+              <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Освобождение от зажимов, телесных реакций, бережное выстраивание здоровых привычек без насилия над собой.
+              </p>
+            </div>
+          </div>
+
+          <!-- Пункт 2: Эмоции -->
+          <div class="flex items-start group">
+            <img src="sea_marker.svg" alt="" class="w-12 h-12 mr-6 transition-transform group-hover:scale-110">
+            <div>
+              <h3 class="text-2xl font-bold mb-2">Эмоции:</h3>
+              <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Понимание состояния тревоги, выгорания, вины: для чего они приходят и как их регулировать.
+              </p>
+            </div>
+          </div>
+
+          <!-- Пункт 3: Сложные случаи -->
+          <div class="flex items-start group">
+            <img src="sea_marker.svg" alt="" class="w-12 h-12 mr-6 transition-transform group-hover:scale-110">
+            <div>
+              <h3 class="text-2xl font-bold mb-2">Сложные случаи:</h3>
+              <p class="text-lg md:text-xl opacity-90 leading-relaxed">
+                Работа с симптомами, которые «не лечатся» медициной (аллергии, ЖКТ, постоянные физические травмы).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- СЕКЦИЯ: МЕТОДЫ РАБОТЫ -->
+  <section class="py-24 bg-[#f3f3f3] reveal">
+    <div class="max-w-6xl mx-auto px-8">
+
+      <div class="mb-16">
+        <h2 class="text-6xl md:text-8xl text-slate-900 leading-none mb-6">Как я работаю</h2>
+        <p class="text-xl md:text-2xl text-slate-600 max-w-3xl">
+          Подбираем методику под ваш уникальный запрос, чтобы путь к результату был максимально комфортным:
+        </p>
+      </div>
+
+      <!-- Сетка карточек-методов -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Карточка 1: EMDR -->
+        <div class="method-card group">
+          <div class="flex justify-end mb-12">
+            <div class="method-icon"></div>
+          </div>
+          <div>
+            <!-- Добавили group-hover:text-white -->
+            <h3 class="text-3xl font-bold mb-4 transition-colors duration-500 group-hover:text-white">EMDR (ДПДГ)</h3>
+            <p class="text-lg leading-relaxed opacity-90 transition-colors duration-500 group-hover:text-white">
+              Деликатная и быстрая проработка травм, фобий и навязчивых мыслей.
+            </p>
+          </div>
+        </div>
+
+        <!-- Карточка 2: PSY 2.0 (Инвертированная) -->
+        <div class="method-card method-card--inverted group">
+          <div class="flex justify-end mb-12">
+            <div class="method-icon"></div>
+          </div>
+          <div>
+            <!-- При наведении (group-hover) текст станет черным -->
+            <h3 class="text-3xl font-bold mb-4 transition-colors duration-500 ">
+              Метод PSY 2.0
+            </h3>
+            <p class="text-lg leading-relaxed group-hover:text-slate-900 opacity-90 transition-colors duration-500 group-hover:text-slate-800">
+              Работа через ощущения, симптом, реакцию, внесение нового эволюционного шаблона через регрессивную шкалу.
+            </p>
+          </div>
+        </div>
+
+        <!-- Карточка 3: МАК-карты -->
+        <div class="method-card group">
+          <div class="flex justify-end mb-12">
+            <div class="method-icon"></div>
+          </div>
+          <div>
+            <!-- Добавили group-hover:text-white -->
+            <h3 class="text-3xl font-bold mb-4 transition-colors duration-500 group-hover:text-white">МАК-карты</h3>
+            <p class="text-lg leading-relaxed opacity-90 transition-colors duration-500 group-hover:text-white">
+              Мягкий способ заглянуть в подсознание, найти ответы и скрытые ресурсы, когда трудно подобрать слова.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- СЕКЦИЯ: ВАШ ПУТЬ К ИЗМЕНЕНИЯМ -->
+
+  <section class="py-16 md:py-24 bg-[#f8fafc] overflow-hidden reveal relative">
+
+    <!-- Декоративная волна -->
+    <div class="side-wave-container">
+      <img src="wave.svg" alt="" class="side-wave-img">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
+      <!-- УВЕЛИЧЕНО для мобильных: text-4xl (было text-3xl) -->
+      <h2 class="text-4xl md:text-4xl lg:text-5xl text-center mb-16 md:mb-20">Ваш путь к изменениям</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] gap-12 md:gap-4 items-start">
+
+        <!-- Этап 1 -->
+        <div class="path-step">
+          <span class="step-number text-5xl md:text-6xl">1</span>
+          <div class="step-title-container mt-6 md:mt-0">
+            <!-- УВЕЛИЧЕНО для мобильных: text-2xl (было text-xl) -->
+            <h3 class="step-title text-2xl md:text-lg lg:text-2xl">Первая встреча</h3>
+          </div>
+          <div class="path-icon w-20 h-20 md:w-16 md:h-16 my-6 md:my-4" style="--icon-url: url('talk.svg')"></div>
+          <p class="step-desc text-lg md:text-base opacity-90">Напишите мне — я бесплатно отвечу на вопросы и помогу выбрать формат</p>
+        </div>
+
+        <!-- Стрелка 1 -->
+        <div class="hidden md:flex flex-col items-center justify-center arrow-column md:pt-[130px] lg:pt-[160px]">
+          <div class="path-arrow" style="--arrow-url: url('arrow.svg')"></div>
+        </div>
+
+        <!-- Этап 2 -->
+        <div class="path-step">
+          <span class="step-number text-5xl md:text-6xl">2</span>
+          <div class="step-title-container mt-6 md:mt-0">
+            <h3 class="step-title text-2xl md:text-lg lg:text-2xl">Целостный разбор</h3>
+          </div>
+          <div class="path-icon w-20 h-20 md:w-16 md:h-16 my-6 md:my-4" style="--icon-url: url('search.svg')"></div>
+          <p class="step-desc text-lg md:text-base opacity-90">Смотрим на тело, эмоции, контекст жизни</p>
+        </div>
+
+        <!-- Стрелка 2 -->
+        <div class="hidden md:flex flex-col items-center justify-center arrow-column md:pt-[130px] lg:pt-[160px]">
+          <div class="path-arrow" style="--arrow-url: url('arrow.svg')"></div>
+        </div>
+
+        <!-- Этап 3 -->
+        <div class="path-step">
+          <span class="step-number text-5xl md:text-6xl">3</span>
+          <div class="step-title-container mt-6 md:mt-0">
+            <h3 class="step-title text-2xl md:text-lg lg:text-2xl">Выбираем маршрут</h3>
+          </div>
+          <div class="path-icon w-20 h-20 md:w-16 md:h-16 my-6 md:my-4" style="--icon-url: url('meditate.svg')"></div>
+          <p class="step-desc text-lg md:text-base opacity-90">Подбираю методику терапии под ваш уникальный случай</p>
+        </div>
+
+        <!-- Стрелка 3 -->
+        <div class="hidden md:flex flex-col items-center justify-center arrow-column md:pt-[130px] lg:pt-[160px]">
+          <div class="path-arrow" style="--arrow-url: url('arrow.svg')"></div>
+        </div>
+
+        <!-- Этап 4 -->
+        <div class="path-step">
+          <span class="step-number text-5xl md:text-6xl">4</span>
+          <div class="step-title-container mt-6 md:mt-0">
+            <h3 class="step-title text-2xl md:text-lg lg:text-2xl">Идём в вашем ритме</h3>
+          </div>
+          <div class="path-icon w-20 h-20 md:w-16 md:h-16 my-6 md:my-4" style="--icon-url: url('time.svg')"></div>
+          <p class="step-desc text-lg md:text-base opacity-90">Встречи 1–2 раза в неделю или раз в месяц. Без спешки и давления</p>
+        </div>
+
+        <!-- Стрелка 4 -->
+        <div class="hidden md:flex flex-col items-center justify-center arrow-column md:pt-[130px] lg:pt-[160px]">
+          <div class="path-arrow" style="--arrow-url: url('arrow.svg')"></div>
+        </div>
+
+        <!-- Этап 5 -->
+        <div class="path-step">
+          <span class="step-number text-5xl md:text-6xl">5</span>
+          <div class="step-title-container mt-6 md:mt-0">
+            <h3 class="step-title text-2xl md:text-lg lg:text-2xl">Фиксируем изменения</h3>
+          </div>
+          <div class="path-icon w-20 h-20 md:w-16 md:h-16 my-6 md:my-4" style="--icon-url: url('graph.svg')"></div>
+          <p class="step-desc text-lg md:text-base opacity-90">Отслеживаем прогресс — от «стало легче дышать» до «изменились отношения»</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК ЗАПИСИ -->
+
+  <!-- Установлен id="consultation", чтобы кнопка из начала страницы вела сюда -->
+  <section id="consultation" class="relative bg-white py-12 overflow-hidden scroll-mt-20">
+    <div class="flex flex-col md:flex-row items-stretch md:h-[550px]">
+
+      <!-- ЛЕВАЯ ЧАСТЬ: БИРЮЗОВЫЙ БЛОК -->
+      <div class="bg-[#28C0C1] flex-grow flex justify-center items-center p-8 md:p-12 relative">
+
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <img src="wave.svg" alt=""
+               class="absolute bottom-[-10%] left-[-5%] w-[85%] opacity-50 object-contain">
+        </div>
+
+        <div class="w-full max-w-xl relative z-10">
+          <h2 class="text-white text-5xl md:text-7xl font-serif mb-8 leading-[1.05]">
+            Записаться на консультацию
+          </h2>
+
+          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-3" id="psychologist-form">
+            <input type="hidden" name="access_key" value="63be24c9-ce3d-4ffb-9bd0-8e0c287ea6ec">
+            <input type="hidden" name="from_name" value="Сайт Психолога">
+            <input type="hidden" name="subject" value="Новая запись на консультацию">
+
+            <!-- Анти-спам поле -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <input type="text" name="name" placeholder="ФИО" required maxlength="100"
+                   class="w-full p-3 rounded-sm bg-[#f1f5f9] outline-none text-slate-800 placeholder:text-slate-500 focus:bg-white transition-all border-none">
+
+            <input type="tel" name="phone" placeholder="Телефон" required pattern="^[0-9+()-\s]{7,18}$"
+                   class="w-full p-3 rounded-sm bg-[#f1f5f9] outline-none text-slate-800 placeholder:text-slate-500 focus:bg-white transition-all border-none">
+
+            <textarea name="message" placeholder="Комментарии" rows="2" maxlength="500"
+                      class="w-full p-3 bg-[#f1f5f9] outline-none text-slate-800 placeholder:text-slate-500 resize-none focus:bg-white transition-all border-none"></textarea>
+
+            <!-- БЛОК С ЧЕКБОКСОМ -->
+            <div class="flex items-start space-x-3 pt-2">
+              <input type="checkbox" id="privacy" required
+                     class="mt-1 w-4 h-4 rounded border-none bg-[#f1f5f9] text-[#28C0C1] focus:ring-0 cursor-pointer">
+              <label for="privacy" class="text-[11px] text-white/90 leading-snug cursor-pointer select-none">
+                Я даю согласие на обработку моих персональных данных в соответствии с политикой конфиденциальности.
+              </label>
+            </div>
+
+            <button type="submit" id="submit-btn"
+                    class="w-full py-4 mt-2 bg-[#f1f5f9] text-[#28C0C1] font-bold text-lg hover:bg-white transition-all uppercase tracking-widest shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+              Записаться на консультацию
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- РАЗДЕЛИТЕЛЬ -->
+      <div class="w-4 md:w-8 bg-white flex-shrink-0"></div>
+
+      <!-- ПРАВАЯ ЧАСТЬ: ФОТО -->
+      <div class="hidden md:block flex-shrink-0 md:w-[35%] bg-white h-full">
+        <div class="flex h-full">
+          <img src="pic_form.png" alt="Консультация"
+               class="h-full w-auto object-cover block">
+          <div class="flex-grow bg-white"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('psychologist-form');
+    const privacyCheckbox = document.getElementById('privacy');
+    const submitBtn = document.getElementById('submit-btn');
+    const startTime = Date.now();
+
+    // Функция управления состоянием кнопки
+    privacyCheckbox.addEventListener('change', function() {
+      submitBtn.disabled = !this.checked;
+    });
+
+    form.addEventListener('submit', function(e) {
+      // Защита от слишком быстрой отправки (боты)
+      if (Date.now() - startTime < 2000) {
+        e.preventDefault();
+        return;
+      }
+
+      // Дополнительная проверка чекбокса перед отправкой
+      if (!privacyCheckbox.checked) {
+        e.preventDefault();
+        alert('Пожалуйста, подтвердите согласие на обработку данных.');
+      }
+    });
+  </script>
+
+  <section class="py-20 px-4 bg-[#f3f4f6]">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-5xl md:text-6xl font-serif text-center mb-16 text-slate-900">
+        Часто задаваемые вопросы
+      </h2>
+
+      <div class="space-y-4">
+
+        <!-- Вопрос 1 -->
+        <details class="group relative overflow-hidden rounded-[40px] bg-[#28C0C1] open:bg-[#e2e8f0] transition-all duration-500" open>
+          <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none outline-none z-20 relative">
+        <span class="text-xl md:text-2xl font-serif text-white group-open:text-[#28C0C1] transition-colors duration-500 pr-10">
+          Как проходят онлайн-сессии? Это эффективно?
+        </span>
+            <div class="relative w-12 h-12 flex-shrink-0">
+              <div class="absolute inset-0 flex items-center justify-center bg-white rounded-full text-[#28C0C1] transition-all duration-500 group-open:opacity-0 group-open:rotate-90 group-open:scale-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center bg-[#28C0C1] rounded-full text-white opacity-0 -rotate-180 scale-50 transition-all duration-500 group-open:opacity-100 group-open:rotate-0 group-open:scale-100">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+          </summary>
+          <div class="grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+            <div class="overflow-hidden">
+              <div class="p-8 pt-0 text-lg leading-relaxed text-slate-700">
+                Да, видеосвязь осуществляется через Яндекс Телемост. Для EMDR я даю простые инструкции по движению глаз или использую звуковые стимулы. Онлайн даже удобнее: вы дома, в безопасной обстановке.
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Вопрос 2 -->
+        <details class="group relative overflow-hidden rounded-[40px] bg-[#28C0C1] open:bg-[#e2e8f0] transition-all duration-500">
+          <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none outline-none z-20 relative">
+        <span class="text-xl md:text-2xl font-serif text-white group-open:text-[#28C0C1] transition-colors duration-500 pr-10">
+          Сколько стоят консультации и как записаться?
+        </span>
+            <div class="relative w-12 h-12 flex-shrink-0">
+              <div class="absolute inset-0 flex items-center justify-center bg-white rounded-full text-[#28C0C1] transition-all duration-500 group-open:opacity-0 group-open:rotate-90 group-open:scale-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center bg-[#28C0C1] rounded-full text-white opacity-0 -rotate-180 scale-50 transition-all duration-500 group-open:opacity-100 group-open:rotate-0 group-open:scale-100">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+            <div class="overflow-hidden">
+              <div class="p-8 pt-0 text-lg leading-relaxed text-slate-700">
+                Разовая сессия (60–90 мин) — 5000 руб. EMDR или «Целостный разбор» (60–90 мин) — 5000 руб. Также есть абонементы на 4 или 8 встреч со скидкой 10–15%. Для записи напишите мне в Telegram или оставьте заявку через форму на сайте.
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Вопрос 3 -->
+        <details class="group relative overflow-hidden rounded-[40px] bg-[#28C0C1] open:bg-[#e2e8f0] transition-all duration-500">
+          <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none outline-none z-20 relative">
+        <span class="text-xl md:text-2xl font-serif text-white group-open:text-[#28C0C1] transition-colors duration-500 pr-10">
+          Сколько длится одна сессия и сколько нужно встреч?
+        </span>
+            <div class="relative w-12 h-12 flex-shrink-0">
+              <div class="absolute inset-0 flex items-center justify-center bg-white rounded-full text-[#28C0C1] transition-all duration-500 group-open:opacity-0 group-open:rotate-90 group-open:scale-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center bg-[#28C0C1] rounded-full text-white opacity-0 -rotate-180 scale-50 transition-all duration-500 group-open:opacity-100 group-open:rotate-0 group-open:scale-100">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+            <div class="overflow-hidden">
+              <div class="p-8 pt-0 text-lg leading-relaxed text-slate-700">
+                Сессия длится от 60 до 90 минут. Для работы с острым кризисом или травмой обычно требуется 1–3 сессии. Глубинная работа (самооценка, отношения, психосоматика) занимает от 6 до 12 встреч.
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Вопрос 4 -->
+        <details class="group relative overflow-hidden rounded-[40px] bg-[#28C0C1] open:bg-[#e2e8f0] transition-all duration-500">
+          <summary class="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none outline-none z-20 relative">
+        <span class="text-xl md:text-2xl font-serif text-white group-open:text-[#28C0C1] transition-colors duration-500 pr-10">
+          Что такое EMDR (ДПДГ) и кому это подходит?
+        </span>
+            <div class="relative w-12 h-12 flex-shrink-0">
+              <div class="absolute inset-0 flex items-center justify-center bg-white rounded-full text-[#28C0C1] transition-all duration-500 group-open:opacity-0 group-open:rotate-90 group-open:scale-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center bg-[#28C0C1] rounded-full text-white opacity-0 -rotate-180 scale-50 transition-all duration-500 group-open:opacity-100 group-open:rotate-0 group-open:scale-100">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </div>
+            </div>
+          </summary>
+          <div class="grid grid-rows-[0fr] group-open:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+            <div class="overflow-hidden">
+              <div class="p-8 pt-0 text-lg leading-relaxed text-slate-700">
+                Это метод переработки травм движением глаз, признанный ВОЗ. Он помогает «перезаписать» болезненные воспоминания (аварии, потери, фобии) так, что они перестают вызывать острую боль. Метод эффективен для тех, кто хочет быстро справиться с последствиями тяжелых событий.
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Скрываем стандартный треугольник во всех браузерах */
+    summary::-webkit-details-marker { display: none; }
+    summary { list-style: none; }
+  </style>
+
+  <footer class="bg-[#28C0C1] py-12 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+        <!-- ЛЕВАЯ КОЛОНКА: КОНТАКТЫ -->
+        <div class="space-y-6">
+          <h2 class="text-white text-5xl md:text-6xl font-serif">Контакты</h2>
+
+          <div class="space-y-4">
+            <!-- Телефон из User Summary -->
+            <a href="tel:+79509972800" class="block text-white text-xl md:text-2xl hover:opacity-80 transition-opacity">
+              Телефон: +7 (950) 997-28-00
+            </a>
+
+            <!-- Социальные сети -->
+            <div class="flex flex-wrap gap-4 pt-2">
+              <!-- Telegram Канал -->
+              <a href="https://t.me/ot_psy_lova" target="_blank" class="flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full transition-all border border-white/20">
+                <span class="text-sm font-medium">Telegram Канал</span>
+              </a>
+
+              <!-- Личный Telegram -->
+              <a href="https://t.me/Soul_Y_Belova_Lova" target="_blank" class="flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full transition-all border border-white/20">
+                <span class="text-sm font-medium">Написать в ЛС</span>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/y.belova_lova_official" target="_blank" class="flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full transition-all border border-white/20">
+                <span class="text-sm font-medium">Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА: ДОКУМЕНТЫ -->
+        <div class="md:text-right space-y-4">
+          <!-- Обновленная ссылка: теперь вызывает JS функцию -->
+          <button onclick="togglePrivacyModal()" class="inline-block text-white/90 text-lg md:text-xl hover:text-white underline underline-offset-4 transition-colors cursor-pointer bg-transparent border-none p-0">
+            Политика конфиденциальности
+          </button>
+          <p class="text-white/70 text-sm md:text-base leading-relaxed">
+            Профессиональная психологическая помощь.<br>
+            Индивидуальные сессии и EMDR-терапия.
+          </p>
+        </div>
+      </div>
+
+      <!-- НИЖНЯЯ ЛИНИЯ -->
+      <div class="mt-16 pt-8 border-t border-white/20 text-center">
+        <p class="text-white/60 text-sm uppercase tracking-[0.2em]">
+          © ИП Белова Ю.В. 2026
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Модальное окно -->
+  <div id="privacy-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <!-- Оверлей (затемнение) -->
+    <div onclick="togglePrivacyModal()" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+
+    <!-- Контент окна -->
+    <div class="relative bg-white w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-[40px] shadow-2xl p-8 md:p-12 scrollbar-hide">
+      <!-- Кнопка закрытия -->
+      <button onclick="togglePrivacyModal()" class="absolute top-6 right-6 text-slate-400 hover:text-[#28C0C1] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="prose prose-slate max-w-none">
+        <h2 class="text-3xl font-serif text-[#28C0C1] mb-6">Политика конфиденциальности</h2>
+
+        <div class="space-y-6 text-slate-600 leading-relaxed text-sm">
+          <p>Настоящая Политика содержит правила обработки персональных данных пользователей сайта <strong>[ССЫЛКА НА САЙТ]</strong>.</p>
+
+          <section>
+            <h3 class="font-bold text-slate-800">1. Какие данные мы собираем</h3>
+            <p>Мы собираем только те данные, которые вы вводите в форму обратной связи: имя, номер телефона и текст вашего обращения.</p>
+          </section>
+
+          <section>
+            <h3 class="font-bold text-slate-800">2. Цель обработки</h3>
+            <p>Данные используются исключительно для связи с вами и записи на психологическую консультацию.</p>
+          </section>
+
+          <section>
+            <h3 class="font-bold text-slate-800">3. Хранение и защита</h3>
+            <p>Ваши данные хранятся конфиденциально. Мы не передаем их третьим лицам. Ответственное лицо: <strong>ИП Белова Ю.В.</strong>.</p>
+          </section>
+
+          <section>
+            <h3 class="font-bold text-slate-800">4. Ваши права</h3>
+            <p>Вы можете в любой момент запросить удаление ваших данных, написав нам на <strong>Evil_bad_29@mail.ru</strong> или позвонив по телефону <strong>+7 (950) 997-28-00</strong>.</p>
+          </section>
+
+          <div class="pt-6 border-t border-slate-100 text-[10px] text-slate-400 uppercase tracking-widest">
+            Редакция от мая 2026 года
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePrivacyModal() {
+      const modal = document.getElementById('privacy-modal');
+      modal.classList.toggle('hidden');
+      // Блокируем скролл основной страницы при открытом окне
+      document.body.classList.toggle('overflow-hidden');
+    }
+  </script>
+
+  <style>
+    /* Скрываем стандартный скроллбар для эстетики */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</main>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
