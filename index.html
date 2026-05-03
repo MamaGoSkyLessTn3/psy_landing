@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-DTxMcfQ2.js"></script>
+  <script type="module" crossorigin src="/assets/index-C4r3TrJE.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-ByLiKb96.css">
 </head>
 
@@ -420,24 +420,22 @@
             Записаться на консультацию
           </h2>
 
-          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-3" id="psychologist-form">
-            <input type="hidden" name="access_key" value="63be24c9-ce3d-4ffb-9bd0-8e0c287ea6ec">
-            <input type="hidden" name="from_name" value="Сайт Психолога">
-            <input type="hidden" name="subject" value="Новая запись на консультацию">
+          <!-- Убрали action и изменили ID на contact-form (как в main.js) -->
+          <form class="space-y-3" id="contact-form">
 
-            <!-- Анти-спам поле -->
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-            <input type="text" name="name" placeholder="ФИО" required maxlength="100"
+            <!-- Обновили name на user_name -->
+            <input type="text" name="user_name" placeholder="ФИО" required maxlength="100"
                    class="w-full p-3 rounded-sm bg-[#f1f5f9] outline-none text-slate-800 placeholder:text-slate-500 focus:bg-white transition-all border-none">
 
-            <input type="tel" name="phone" placeholder="Телефон" required pattern="^[0-9+()-\s]{7,18}$"
+            <!-- Обновили name на user_phone -->
+            <input type="tel" name="user_phone" placeholder="Телефон" required pattern="^[0-9+()-\s]{7,18}$"
                    class="w-full p-3 rounded-sm bg-[#f1f5f9] outline-none text-slate-800 placeholder:text-slate-500 focus:bg-white transition-all border-none">
 
-            <textarea name="message" placeholder="Комментарии" rows="2" maxlength="500"
+            <!-- Обновили name на user_message -->
+            <textarea name="user_message" placeholder="Комментарии" rows="2" maxlength="500"
                       class="w-full p-3 bg-[#f1f5f9] outline-none text-slate-800 placeholder:text-slate-500 resize-none focus:bg-white transition-all border-none"></textarea>
 
-            <!-- БЛОК С ЧЕКБОКСОМ -->
+            <!-- БЛОК С ЧЕКБОКСОМ (Оставили как есть) -->
             <div class="flex items-start space-x-3 pt-2">
               <input type="checkbox" id="privacy" required
                      class="mt-1 w-4 h-4 rounded border-none bg-[#f1f5f9] text-[#28C0C1] focus:ring-0 cursor-pointer">
@@ -469,31 +467,7 @@
     </div>
   </section>
 
-  <script>
-    const form = document.getElementById('psychologist-form');
-    const privacyCheckbox = document.getElementById('privacy');
-    const submitBtn = document.getElementById('submit-btn');
-    const startTime = Date.now();
-
-    // Функция управления состоянием кнопки
-    privacyCheckbox.addEventListener('change', function() {
-      submitBtn.disabled = !this.checked;
-    });
-
-    form.addEventListener('submit', function(e) {
-      // Защита от слишком быстрой отправки (боты)
-      if (Date.now() - startTime < 2000) {
-        e.preventDefault();
-        return;
-      }
-
-      // Дополнительная проверка чекбокса перед отправкой
-      if (!privacyCheckbox.checked) {
-        e.preventDefault();
-        alert('Пожалуйста, подтвердите согласие на обработку данных.');
-      }
-    });
-  </script>
+  <!-- Скрипт внутри HTML теперь не нужен, так как вся логика переехала в main.js -->
 
   <section class="py-20 px-4 bg-[#f3f4f6]">
     <div class="max-w-4xl mx-auto">
